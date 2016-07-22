@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class JsonController extends Controller
 {
+
+
     public function JsonSuccess($msg = 'success')
     {
         return new JsonResponse(
@@ -27,13 +29,26 @@ class JsonController extends Controller
         );
     }
 
-    public function JsonData($data = null)
+    public function JsonData($data = null, $count = false)
     {
-        return new JsonResponse(
-            array(
-                'success' => true,
-                'data' => $data
-            )
-        );
+        if ($count)
+        {
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => $data,
+                    'count' => intval($count)
+                )
+            );
+        } else
+        {
+            return new JsonResponse(
+                array(
+                    'success' => true,
+                    'data' => $data
+                )
+            );
+        }
+
     }
 }
