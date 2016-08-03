@@ -30,9 +30,16 @@
             'username': this.username,
             'password': this.password
           }
+        var options =
+          {
+            'emulateJSON': true
+          }
         this.$http
-          .post(config.apiEndpoint + '/oauth/v2/token', credentials).then(function (response) {
-            this.response = response.body
+          .post(config.apiEndpoint + '/oauth/v2/token', credentials, options).then(function (response) {
+            var data = JSON.parse(response.body)
+            if (data['access_token']) {
+              config.access_token = data['access_token']
+            }
           }).catch(function (error) {
             console.log(error)
           })
