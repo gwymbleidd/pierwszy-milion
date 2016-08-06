@@ -29,16 +29,7 @@ class CityController extends JsonController
 
         $requestData = json_decode($request->getContent(), true);
         try {
-            $city = new City();
-            $cityconfig = $em->getRepository('AppBundle:Cityconfig')->find($requestData['config_id']);
-
-            $city->setCityconfig($cityconfig);
-            $city->setName($requestData['name']);
-            $city->setStartDate(new \Datetime($requestData['start_date']));
-            $city->setEndDate(new \Datetime($requestData['end_date']));
-            $em->persist($cityconfig);
-            $em->persist($city);
-            $em->flush();
+            $this->get('app.city_manager')->createCity($requestData);
 
         } catch(Exception $e) {
             return $this->JsonFail('Wystąpił błąd');
