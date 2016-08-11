@@ -58,7 +58,7 @@ class BuildingController extends JsonController
 
 
         /**
-     * @Route("/addBuilding")
+     * @Route("")
      * @Method("POST")
      */
     public function addBuildingAction(Request $request)
