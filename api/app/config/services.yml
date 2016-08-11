@@ -8,3 +8,8 @@ services:
         class:        AppBundle\Service\CityManager
         arguments:    
             entityManager: "@doctrine.orm.entity_manager"
+
+    app.building_manager:
+        class:        AppBundle\Service\BuildingManager
+        arguments:    
+            entityManager: "@doctrine.orm.entity_manager"
