@@ -14,6 +14,7 @@ use AppBundle\Entity\Building;
 use AppBundle\Service\BuildingManager;
 /**
  * @Route("/building")
+ * @Security("has_role('ROLE_ADMIN')")
  */
 class BuildingController extends JsonController
 {
