@@ -25,7 +25,8 @@ class AccountController extends JsonController
      */
     public function registerAction(Request $request)
     {
-		$requestData = json_decode($request->getContent(), true);
+        $requestData = json_decode($request->getContent(), true);
+        
         $userManager = $this->get('fos_user.user_manager');
         $user = $userManager->createUser();
 

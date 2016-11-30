@@ -4,6 +4,12 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.city_manager:
+        class:        AppBundle\Service\CityManager
+        arguments:    
+            entityManager: "@doctrine.orm.entity_manager"
+
+    app.building_manager:
+        class:        AppBundle\Service\BuildingManager
+        arguments:    
+            entityManager: "@doctrine.orm.entity_manager"
