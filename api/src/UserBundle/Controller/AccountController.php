@@ -29,8 +29,8 @@ class AccountController extends JsonController
         
         $userManager = $this->get('fos_user.user_manager');
         $user = $userManager->createUser();
-
-        if (!array_key_exists('username', $requestData) || !array_key_exists('email', $requestData) || !array_key_exists('password', $requestData))
+        
+        if (!$requestData || !array_key_exists('username', $requestData) || !array_key_exists('email', $requestData) || !array_key_exists('password', $requestData))
         {
             return $this->JsonFail('Błędne dane');
         }

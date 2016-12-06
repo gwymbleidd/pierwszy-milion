@@ -12,6 +12,8 @@ use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
 use AppBundle\Entity\Building;
 use AppBundle\Service\BuildingManager;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 /**
  * @Route("/building")
  * @Security("has_role('ROLE_ADMIN')")

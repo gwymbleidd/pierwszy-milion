@@ -10,6 +10,8 @@
   </template>
 
   <script>
+  import config from './../config'
+
   export default {
     data () {
       return {
@@ -20,11 +22,7 @@
     methods: {
       getPost () {
         this.$http
-          .get('https://jsonplaceholder.typicode.com/posts/' + Math.floor((Math.random() * 50) + 1)).then(function (response) {
-            this.quotes.push(JSON.parse(response.body))
-          }).catch(function (error) {
-            console.log(error)
-          })
+          .get(config.apiEndpoint + '/building/list')
       },
       remove (index) {
         this.quotes.splice(index, 1)
