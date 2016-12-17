@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * @Route("/building")
- * @Security("has_role('ROLE_ADMIN')")
+ * @Security("has_role('ROLE_SUPER_ADMIN')")
  */
 class BuildingController extends JsonController
 {

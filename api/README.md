@@ -1,3 +1,6 @@
+tworzenie admina:
+	php app/console fos:user:create admin --super-admin
+
 register:
 	/register
 	
