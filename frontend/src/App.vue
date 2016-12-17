@@ -7,7 +7,7 @@
         </a>
         <ul class="nav navbar-nav">
           <li><a v-link="'/home'">Home</a></li>
-          <li><a v-link="'/test'">Test</a></li>
+          <li><a v-link="'/buildings'">Buildings</a></li>
           <li v-if="!isLogged"><a v-link="'/login'">Login</a></li>
           <li v-if="isLogged"><a v-on:click="logout()">Wyloguj</a></li>
         </ul>
