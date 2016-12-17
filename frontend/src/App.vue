@@ -17,7 +17,7 @@
       <div class="col-sm-3">
       </div>
       <div class="col-sm-9">
-        <router-view v-bind:islogged="isLogged"></router-view>
+        <router-view></router-view>
       </div>
     </div>
   </div>

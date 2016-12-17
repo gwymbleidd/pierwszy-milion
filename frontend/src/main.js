@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueTables from 'vue-tables'
 import App from './App.vue'
 import Home from './components/Home.vue'
 import Test from './components/Test.vue'
@@ -11,6 +12,7 @@ import config from './config'
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
+Vue.use(VueTables.server, {})
 const router = new VueRouter()
 
 router.map({
@@ -30,7 +32,7 @@ router.map({
 
 Vue.http.interceptors.push((request, next) => {
   if (request.method === 'get' && authHelper.checkAuth() && authHelper.getToken()) {
-    request.url += '?access_token=' + authHelper.getToken()
+    request.url = config.apiEndpoint + request.url + '?access_token=' + authHelper.getToken()
   }
   next((response) => {
     if (response.status === 401) {
