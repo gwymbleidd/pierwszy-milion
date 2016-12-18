@@ -7,7 +7,7 @@
         </a>
         <ul class="nav navbar-nav">
           <li><a v-link="'/home'">Home</a></li>
-          <li><a v-link="'/test'">Test</a></li>
+          <li><a v-link="'/buildings'">Buildings</a></li>
           <li v-if="!isLogged"><a v-link="'/login'">Login</a></li>
           <li v-if="isLogged"><a v-on:click="logout()">Wyloguj</a></li>
         </ul>
@@ -17,7 +17,7 @@
       <div class="col-sm-3">
       </div>
       <div class="col-sm-9">
-        <router-view v-bind:islogged="isLogged"></router-view>
+        <router-view></router-view>
       </div>
     </div>
   </div>
